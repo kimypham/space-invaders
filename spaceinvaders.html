@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+    <head>
+        <style>
+            @import url(style.css);
+            p.highlight {
+                color: red;
+            }
+            svg {
+                background-color: rgb(41, 41, 36);
+            }
+            .ship {
+              fill: lightblue;
+              text-align:center;
+            }
+            .hidden {
+              visibility:hidden;
+            }
+
+            .arrowkey {
+              width:18px;
+              text-align:center;
+              border-radius:3px;
+              background-color:lightgray;
+            }
+            .highlight {
+              background-color:pink;
+            }
+            .points {
+              font-family:sans-serif;
+              font-size:40px;
+              fill:white;
+            }
+
+            .gameover {
+              font-family:sans-serif;
+              font-size:80px;
+              fill:red;
+            }
+            .gamewin {
+              font-family:sans-serif;
+              font-size:80px;
+              fill:red;
+            }
+            div#controls {
+                display:inline;
+                position: relative;
+            }
+
+            svg#canvas {
+              float:left;
+              display:inline;
+              margin-right:10px;
+            }
+
+
+
+        </style>
+        <script src="./dist/spaceinvaders.js"></script>
+    </head>
+    <body>
+        <h1 style="margin-left: 100px;">👾 Space Invaders 👾</h1>
+        <!-- sprite sheet from
+        https://www.deviantart.com/gooperblooper22/art/Space-Invaders-Sprite-Sheet-135338373
+        -->
+        <svg id="canvas" width="600" height="600" style="background-color:black;">
+          <text id="points" x="10" y="40" class="points">Points:</text>
+          <text id="gameover" x="100" y="300" class="gameover"></text>
+            <g id="ship" transform="translate(300, 525)">
+                <image href="ship.png" x="-22.5px" width="7.5%"></image><!--ship sprite taken from sprite sheet referenced above-->
+            </g>
+          </svg>
+
+          <div id="controls">
+            <p>A recreation of the classic arcade game Space Inavaders <br>using Functional Reactive Programming (FRP) techniques.</p>
+            <p>  
+                Shoot as many aliens as you can to eliminate them and score points!<br>
+                Be careful to not let their bullets touch you, or to let the aliens reach the bottom of the screen - this will cause you to die.<br>
+                To win, shoot every alien on screen. The game restarts once you win or lose.<br>
+                Orange aliens = 30 points, yellow = 20 points, white = 10 points<br>
+                You also have 4 shields which dissapear after being hit by bullets 10 times (by either you or the aliens)<br><br>
+                 Move using the left and right arrow keys, and fire bullets using the space key.
+                </p>
+            
+            
+            <h2>Controls:</h2>
+            <table>
+                <tr><td>Move Left</td><td><div id="ArrowLeft" class="key">&#8678;</div></td></tr>
+                <tr><td>Move Right</td><td><div id="ArrowRight" class="key">&#8680;</div></td></tr>
+                <tr><td>Fire</td><td><div id="Space" class="key" style="width:50px">Space</div></td></tr>
+            </table>
+            </div>
+         
+    </body>
+</html>
